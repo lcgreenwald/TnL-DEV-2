@@ -5,13 +5,13 @@ substitutions:
   device_description: ${name} made by Apollo Automation - version ${version}.
 
 packages:
-  lcgreenwald.T&L-DEV-2: # name of package/project
-    url: https://github.com/lcgreenwald/T&L-DEV-2 # url of the repository
+  lcgreenwald.TnL-DEV-2: # name of package/project
+    url: https://github.com/lcgreenwald/TnL-DEV-2 # url of the repository
     ref: main # branch, tag or commit SHA
-    files: [Integrations/ESPHome/T&L-DEV-2.yaml] # Path to config from base repo URL
+    files: [Integrations/ESPHome/TnL-DEV-2.yaml] # Path to config from base repo URL
     refresh: 1min # how often to sync updates from the remote url
   remote_package:
-    url: https://github.com/lcgreenwald/T&L-DEV-2/
+    url: https://github.com/lcgreenwald/TnL-DEV-2/
     ref: main
     files:
 #      - Integrations/ESPHome/MyCustom.yaml
