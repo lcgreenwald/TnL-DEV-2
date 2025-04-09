@@ -7,7 +7,7 @@ substitutions:
 packages:
   lcgreenwald.TnL-DEV-2: # name of package/project
     url: https://github.com/lcgreenwald/TnL-DEV-2 # url of the repository
-    ref: main # branch, tag or commit SHA
+    ref: dev # branch, tag or commit SHA
     files: [Integrations/ESPHome/TnL-DEV-2.yaml] # Path to config from base repo URL
     refresh: 1min # how often to sync updates from the remote url
   remote_package:
