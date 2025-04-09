@@ -1,8 +1,8 @@
 #Define Project
 substitutions:
-  name: apollo-dev-2
+  name: tnl-dev-2
   version:  "1"
-  device_description: ${name} made by Apollo Automation - version ${version}.
+  device_description: ${name} made by Tim and Larry - version ${version}.
 
 packages:
   lcgreenwald.TnL-DEV-2: # name of package/project
@@ -18,13 +18,13 @@ packages:
 
 esphome:
   name: "${name}"
-  friendly_name: Apollo DEV-2
-  comment: Apollo DEV-2
+  friendly_name: Tim and Larry DEV-2
+  comment: Tim and Larry DEV-2
   platformio_options:
     board_build.flash_mode: dio
 
   project:
-    name: "ApolloAutomation.DEV-2"
+    name: "TnL.DEV-2"
     version: "${version}"
 
 # Define Board
