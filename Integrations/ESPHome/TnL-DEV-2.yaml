@@ -8,12 +8,14 @@ packages:
   lcgreenwald.TnL-DEV-2: # name of package/project
     url: https://github.com/lcgreenwald/TnL-DEV-2 # url of the repository
     ref: dev # branch, tag or commit SHA
-    files: [Integrations/ESPHome/TnL-DEV-2.yaml] # Path to config from base repo URL
+    files: [Integrations/ESPHome/TnL-core.yaml] # Path to config from base repo URL
     refresh: 1min # how often to sync updates from the remote url
   remote_package:
     url: https://github.com/lcgreenwald/TnL-DEV-2/
     ref: main
-    files: [Integrations/ESPHome/InstantAQI.yaml]
+    files: 
+      - Integrations/ESPHome/TnL-SEN66.yaml
+      - Integrations/ESPHome/TnL-InstantAQI.yaml
     refresh: 1min
 
 esphome:
@@ -71,59 +73,3 @@ captive_portal:
 
 web_server:
   port: 80
-
-#onboard LED using pin GPIO3 as shown below
-light:
-  - platform: esp32_rmt_led_strip
-    id: rgb_onboard_light
-    name: "RGB Onboard Light"
-    pin: GPIO8
-    default_transition_length: 0s
-    chipset: WS2812
-    num_leds: 1
-    rgb_order: grb
-    effects:
-      - pulse:
-          name: "Slow Pulse"
-          transition_length: 1000ms
-          update_interval: 1000ms
-          min_brightness: 50%
-          max_brightness: 100%
-      - pulse:
-          name: "Fast Pulse"
-          transition_length: 100ms
-          update_interval: 100ms
-          min_brightness: 50%
-          max_brightness: 100%
-      - addressable_rainbow:
-          name: Rainbow Effect With Custom Values
-          speed: 10
-          width: 100
-          
-
-button:
-  - platform: restart
-    icon: mdi:power-cycle
-    name: "ESP Reboot"
-
-sensor:
-  - platform: internal_temperature
-    name: "ESP Temperature"
-    id: sys_esp_temperature
-
-  - platform: uptime
-    name: Uptime
-    id: sys_uptime
-    update_interval: 60s
-
-  - platform: wifi_signal
-    name: RSSI
-    id: wifi_signal_db
-    update_interval: 60s
-    entity_category: "diagnostic"
-
-text_sensor:
-  - platform: wifi_info
-    ip_address:
-      name: "${name} IP"
-      icon: "mdi:ip-outline"
