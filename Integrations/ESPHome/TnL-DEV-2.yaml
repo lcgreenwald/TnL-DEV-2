@@ -1,7 +1,7 @@
 #Define Project
 substitutions:
   name: tnl-dev-2
-  version:  "1"
+  version:  "25.4.9"
   device_description: ${name} made by Tim and Larry - version ${version}.
 
 packages:

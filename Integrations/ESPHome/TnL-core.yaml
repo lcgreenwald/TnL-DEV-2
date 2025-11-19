@@ -1,3 +1,4 @@
+# version:  "25.4.9"
 
 #onboard LED using pin GPIO3 as shown below
 light:
@@ -25,8 +26,7 @@ light:
       - addressable_rainbow:
           name: Rainbow Effect With Custom Values
           speed: 10
-          width: 100
-          
+          width: 100        
 
 button:
   - platform: restart
